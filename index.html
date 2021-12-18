@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sort-and-filter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <p>Where the header would be...</p>
+  </header>
+
+  <nav>
+    <p>Where the nav would be...</p>
+  </nav>
+
+  <nav class="inpage">
+    <fieldset class="filter">
+      <legend>Filter</legend>
+      
+      <button id="all" class="active">Show all</button>
+      <button id="dancer">Dancer</button>
+      <button id="distance">Distance</button>
+      <button id="street">Street</button>
+      <button id="surfskate">Surfskate</button>
+    </fieldset>
+
+    <fieldset class="sort">
+      <legend>Sort</legend>
+
+      <button id="default" class="active">Default</button>
+      <button id="type">Type</button>
+      <button id="length">Length</button>
+      <button id="wheelbase">Wheelbase</button>
+    </fieldset>
+  </nav>
+
+  <main>
+
+    <article>
+      <h2>Loaded Poke</h2>
+      <img src="assets/img/loadedpoke.jpeg" alt="Loaded Poke">
+      <ul>
+        <li class="brand">Loaded</li>
+        <li class="type">Surfskate</li>
+        <li class="length">34"</li>
+        <li class="width">9.125"</li>
+        <li class="wheelbase">20.75"</li>
+        <li class="trucks">Carver CX/C2</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Orangatang</li>
+            <li class="size">70mm</li>
+            <li class="series">4President</li>
+            <li class="hardness">80A</li>
+          </ul>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Arbor Zeppelin</h2>
+      <img src="assets/img/arborzeppelin.jpeg" alt="Arbor Flagship Zeppelin">
+      <ul>
+        <li class="brand">Arbor</li>
+        <li class="type">Distance</li>
+        <li class="length">32"</li>
+        <li class="width">8.75"</li>
+        <li class="wheelbase">23"</li>
+        <li class="trucks">Paris RKP 50° 180mm</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Arbor</li>
+            <li class="size">65mm</li>
+            <li class="series">Easyrider</li>
+            <li class="hardness">78A</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Pantheon Tandava</h2>
+      <img src="assets/img/pantheontandava.jpeg" alt="Pantheon Tandava">
+      <ul>
+        <li class="brand">Pantheon</li>
+        <li class="type">Dancer</li>
+        <li class="length">45.3"</li>
+        <li class="width">9.4"</li>
+        <li class="wheelbase">28.66"</li>
+        <li class="trucks">Paris RKP 50° 180mm</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Seismic</li>
+            <li class="size">68mm</li>
+            <li class="series">Tantrum</li>
+            <li class="hardness">79A</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Rocket Exodus</h2>
+      <img src="assets/img/rocketexodus.jpeg" alt="Rocket Exodus">
+      <ul>
+        <li class="brand">Rocket</li>
+        <li class="type">Distance</li>
+        <li class="length">28"</li>
+        <li class="width">9.56"</li>
+        <li class="wheelbase">22"</li>
+        <li class="trucks">Don't Trip Delerium 0° (B) Poppys SP 55° (F)</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Seismic</li>
+            <li class="size">85mm</li>
+            <li class="series">Speedvents</li>
+            <li class="hardness">77A</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Santa Cruz Spongebob</h2>
+      <img src="assets/img/santacruzspongebob.jpeg" alt="Santa Cruz Spongebob">
+      <ul>
+        <li class="brand">Santa Cruz</li>
+        <li class="type">Street</li>
+        <li class="length">32"</li>
+        <li class="width">8.25"</li>
+        <li class="wheelbase">14.25"</li>
+        <li class="trucks">Independent Stage 11 159 Polished</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Bones</li>
+            <li class="size">52mm</li>
+            <li class="series">STF Decenzo Gizzmo</li>
+            <li class="hardness">103A</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Yow x Pyzel Ghost</h2>
+      <img src="assets/img/yowpyzelghost.jpeg" alt="Yow x Pyzel Ghost">
+      <ul>
+        <li class="brand">Yow</li>
+        <li class="type">Surfskate</li>
+        <li class="length">33.5"</li>
+        <li class="width">10"</li>
+        <li class="wheelbase">20"</li>
+        <li class="trucks">Yow Meraki (S5)</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Powel Peralta</li>
+            <li class="size">66mm</li>
+            <li class="series">Snakes</li>
+            <li class="hardness">75A</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Darkstar Felix the Cat</h2>
+      <img src="assets/img/darkstarfelix.jpeg" alt="Darkstar Felix the Cat">
+      <ul>
+        <li class="brand">Darkstar</li>
+        <li class="type">Street</li>
+        <li class="length">32"</li>
+        <li class="width">8.25"</li>
+        <li class="wheelbase">14.25"</li>
+        <li class="trucks">Independent Stage 11 159 Polished</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Santa Cruz</li>
+            <li class="size">54mm</li>
+            <li class="series">Jeremy Fish Bunny Speed Balls</li>
+            <li class="hardness">99A</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Mindless Voodoo Nyoka</h2>
+      <img src="assets/img/mindlessnyoka.jpeg" alt="Mindless Voodoo Nyoka">
+      <ul>
+        <li class="brand">Mindless</li>
+        <li class="type">Distance</li>
+        <li class="length">40"</li>
+        <li class="width">10"</li>
+        <li class="wheelbase">27.56"</li>
+        <li class="trucks">Mindless Talisman 7"</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Mindless</li>
+            <li class="size">70mm</li>
+            <li class="series">Kabila</li>
+            <li class="hardness">78A</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Epic Blow</h2>
+      <img src="assets/img/epicblow.jpeg" alt="Epic Blow">
+      <ul>
+        <li class="brand">Epic</li>
+        <li class="type">Balance board</li>
+        <li class="length">33.4"</li>
+        <li class="width">11.81"</li>
+        <li class="wheelbase">-</li>
+        <li class="trucks">-</li>
+        <li class="wheels">
+          <ul>
+            <li class="brand">Epic</li>
+            <li class="size">12"</li>
+            <li class="series"></li>
+            <li class="hardness"></li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>Where the footer would be...</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
