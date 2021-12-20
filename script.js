@@ -8,24 +8,37 @@ const boardList = document.querySelectorAll('main article')
 document.querySelector('fieldset.filter').addEventListener('click', filterHandler)
 document.querySelector('fieldset.sort').addEventListener('click', sortHandler)
 
+/**
+ * Deals with clicking on a filter button. Do not call this function directly,
+ * use it as a callback function from addEventListener. This function has side-
+ * effects: it calls the DOM directly..
+ * @param {Event} event is passed automagically when using from addEventListener
+ */
 function filterHandler(event) {
   // Make sure we're dealing with a button
-  if (event.target.nodeName === 'BUTTON') {
+  if (isButton(event.target)) {
     // Select all active buttons and remove the active class
     document.querySelector('fieldset.filter .active').classList.remove('active')
+
     // Call the filter function using the target id
     filterByType(event.target.id)
+
     // Add the active class to the target button
     event.target.classList.toggle('active')
   }
 }
 
+/**
+ * Loops through the list of articles and adds a 'hidden' CSS class to the ones
+ * that are filtered out using the passed type parameter. This function has side-
+ * effects: it calls the DOM directly..
+ * @param {String} type of the article that needs to be filtered out
+ */
 function filterByType(type) {
   // Loop through the boardList from the global scope
   boardList.forEach((board) => {
     // Show this boards (remove hidden class from classList)
     board.classList.remove('hidden')
-
     // Hide boards that don't have the selected type
     if (board.querySelector('.type').innerHTML.toLowerCase() !== type && type !== 'all') {
       board.classList.add('hidden')
@@ -33,11 +46,18 @@ function filterByType(type) {
   })
 }
 
+/**
+ * Deals with clicking on a sort button by reordering the articles on the page.
+ * Do not call this function directly, use it as a callback function from
+ * addEventListener. This function has side-effects: it calls the DOM directly..
+ * @param {Event} event is passed automagically when using from addEventListener
+ */
 function sortHandler(event) {
   // Make sure we're dealing with a button
-  if (event.target.nodeName === 'BUTTON') {
+  if (isButton(event.target)) {
     // Select all active buttons and remove the active class
     document.querySelector('fieldset.sort .active').classList.remove('active')
+
     // Check if the user clicked default
     if (event.target.id !== 'default') {
       // Create an array using the boardList (only arrays have sort functions)
@@ -45,13 +65,18 @@ function sortHandler(event) {
         // Call the sort function on the array
         .sort((firstBoard, secondBoard) => {
           // Use event.target.id to select the characteristics we need to compare on two items
-          const valueA = firstBoard.querySelector('.' + event.target.id).innerHTML.toLowerCase()
-          const valueB = secondBoard.querySelector('.' + event.target.id).innerHTML.toLowerCase()
+          const firstBoardType = firstBoard
+            .querySelector('.' + event.target.id)
+            .innerHTML.toLowerCase()
+          const secondBoardType = secondBoard
+            .querySelector('.' + event.target.id)
+            .innerHTML.toLowerCase()
+
           // Compare the items in two ways
-          if (valueA < valueB) {
+          if (firstBoardType < secondBoardType) {
             return -1
           }
-          if (valueA > valueB) {
+          if (firstBoardType > secondBoardType) {
             return 1
           }
           // Values are equal if the above is false
@@ -70,7 +95,17 @@ function sortHandler(event) {
         board.style.order = null
       })
     }
+
     // Add the active class to the target button
     event.target.classList.toggle('active')
   }
+}
+
+/**
+ * Checks if the passed element is a button
+ * @param {Node} element is an HTML element
+ * @returns
+ */
+function isButton(element) {
+  return element.nodeName === 'BUTTON'
 }
